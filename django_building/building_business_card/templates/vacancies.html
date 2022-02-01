@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+    {{title}}
+{% endblock %}
+
+{% block content %}
+    <header class="bg-dark text-white">
+        <div class="container px-4 text-center">
+            <h1 class="fw-bolder">TTConsulting набирает новых сотрудников!</h1>
+        </div>
+    </header>
+
+    <div class="text-center">
+        {% if messages %}
+        {% for message in messages %}
+        {% if message.tags == 'success' %}
+        <div class="alert alert-success" role="alert">
+            {{ message }}
+        </div>
+        {% else %}
+        <div class="alert alert-danger" role="alert">
+            {{ message }}
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+    </div>
+
+        <section id="about">
+            <div class="container px-4">
+                <div class="row gx-4 justify-content-center">
+                    <div class="col-lg-8">
+                        <p class="lead"><strong>Мы можем предложить сегодня:</strong></p>
+                        <ul>
+                            <br>
+                            <li><strong>РАЗМЕЩЕНИЕ</strong> - Мы обеспечиваем наших сотрудников <strong>жилье</strong> или оказать <strong>материальную поддержку</strong>, если арендуете сами!</li>
+                            <br>
+                            <li><strong>РАБОЧАЯ СМЕНА</strong> - Обычная смена это <strong>10 рабочих часов</strong>.</li>
+                            <br>
+                            <li><strong>ОПЛАТА ТРУДА</strong> - Каждый наш сотрудник получает не менее <strong>250 PLN за рабочую смену.</strong></li>
+                            <br>
+                            <li><strong>ЮРИДИЧЕСКАЯ ПОДДЕРЖКА</strong> - Мы обеспечиваем наших сотрудников такими необходимыми документами, как <strong>карта побыта</strong>, или <strong>рабочая виза</strong>, для легального проживания и работы.</li>
+                        </ul>
+                        <br>
+                        <p class="lead"><strong>Вы подходите нам, если Вы:</strong></p>
+                        <ul>
+                            <br>
+                            <li><strong>Ответственный и надежный</strong></li>
+                            <br>
+                            <li><strong>Профессионал, или готов много учится</strong></li>
+                            <br>
+                            <li><strong>Без алкогольной зависимости</strong></li>
+                        </ul>
+                        <br>
+                        <br>
+                        <br>
+                        <p class="text-center"><a href="#vacancies" style="text-decoration: none; color: grey;">ИЩИТЕ ВАКАНСИИ НИЖЕ</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <section class="bg-light" id="vacancies">
+        <div class="container px-4">
+            <h2 class="text-center">Доступные вакансии:</h2>
+                <br>
+                <br>
+                <br>
+            {% for vacancy in vacancies %}
+            <div class="row gx-4 justify-content-center">
+                <div class="col-lg-8">
+                    <h6 class="lead text-center">{{ vacancy.position.upper }}</h6>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            {% endfor %}
+            <p class="text-center"><a href="#contact" style="text-decoration: none; color: grey;">ЗАПОЛНИТЕ ФОРМУ НИЖЕ, ЧТОБЫ ПОДАТЬ ЗАЯВКУ НА ВАКАНСИЮ</a></p>
+        </div>
+    </section>
+
+    <section id="contact">
+            <div class="container px-4">
+                <div class="row gx-4 justify-content-center">
+                    <div class="col-lg-8">
+                        <h3>Отправьте заявку</h3>
+                        <br>
+                        <form action="{% url 'vacancies-form' %}" method="post" style="width: 85%;">
+                            {% csrf_token %}
+                            {{ form }}
+                            <button class="btn btn-dark mt-2 px-4" type="submit">подать заявку</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+        <script rel="text/javascript" src="{% static 'script.js' %}"></script>
+{% endblock %}

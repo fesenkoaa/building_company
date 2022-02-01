@@ -1,0 +1,201 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+    {{title}}
+{% endblock %}
+
+{% block content %}
+        <header class="bg-dark text-white">
+            <div class="container px-4 text-center">
+                <h1 class="fw-bolder">TTConsulting </h1>
+                <p class="lead">Мы те, кто может!</p>
+<!--                <a class="btn btn-lg btn-light" href="#about">Who we are?</a>-->
+            </div>
+        </header>
+
+        <div class="text-center">
+            {% if messages %}
+                {% for message in messages %}
+                    {% if message.tags == 'success' %}
+                        <div class="alert alert-success" role="alert">
+                            {{ message }}
+                        </div>
+                    {% else %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ message }}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </div>
+
+        <section id="about">
+            <div class="container px-4">
+                <div class="row gx-4 justify-content-center">
+                    <div class="col-lg-8">
+                        <h2>Кто мы?</h2>
+                        <br>
+                        <h5>За <strong>18</strong> работы на рынке мы реализовали <strong>68</strong> проектов. И ещё многие в процессе!</h5>
+                        <br>
+                        <p class="lead"><strong>Наши ценности – это принципы компании, служащие ориентиром для выполнения работы:</strong></p>
+                        <ul>
+                            <br>
+                            <li><strong>СТРАСТЬ</strong> -  We want to be the best in everything we do. We work vigorously, we are involved and we try to be the best in our field. We always strive for the best results.</li>
+                            <br>
+                            <li><strong>РЕПУТАЦИЯ</strong> - Мы устанавливаем высокие стандарты и всегда держим свое слово. Благодаря такому подходу мы завоевали доверие клиентов.</li>
+                            <br>
+                            <li><strong>ЧЕСТНОСТЬ</strong> - Мы всегда берем на себя ответственность за правильность нашей работы.</li>
+                        </ul>
+                        <br>
+                        <p class="lead"><strong>Наши цели:</strong></p>
+                        <ul>
+                            <br>
+                            <li>Своевременная реализация качественных строительных проектов наших клиентов.</li>
+                            <br>
+                            <li>Обеспечение высокого качества сотрудников.</li>
+                            <br>
+                            <li>Постоянное профессиональное развитие наших сотрудников.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <br><br>
+        </section>
+
+        <section class="bg-light" id="services">
+            <div class="container px-4 text-center">
+                <h2 class="text-center">Польша</h2>
+                <br><br>
+                <div class="row gx-4 justify-content-center text-center">
+                    <div class="col-lg-6">
+
+                        <figure id="slider">
+
+                            <style>
+                                #slider{
+                                    overflow: hidden;
+                                    content-justify: center;
+                                }
+
+                                #slider figure {
+                                    position: relative;
+                                    width: 500%;
+                                    margin: 0;
+                                    left: 0;
+                                    animation: 10s slider infinite;
+                                }
+
+                                #slider figure img {
+                                    float: left;
+                                    width: 20%;
+                                }
+
+                                @keyframes slider {
+                                    0% {
+                                        left: 0;
+                                    }
+                                    20% {
+                                        left: 0;
+                                    }
+                                    25% {
+                                        left: -100%;
+                                    }
+                                    45% {
+                                        left: -100%;
+                                    }
+                                    50% {
+                                        left: -200%;
+                                    }
+                                    70% {
+                                        left: -200%;
+                                    }
+                                }
+                            </style>
+
+                            <figure class="slides">
+                                <img src="https://sparta-bud.pl/wp-content/uploads/2019/11/aa-2048x1536.jpg">
+                                <img src="https://sparta-bud.pl/wp-content/uploads/2019/11/3-2048x1536.jpg">
+                                <img src="https://sparta-bud.pl/wp-content/uploads/2019/11/6-2048x1536.jpg">
+                            </figure>
+                        </figure>
+                    </div>
+
+                    <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+
+                    <br><br>
+                        {% for project in projects %}
+                        <div class="column text-center" style="width: 50%;">
+                            <br>
+                            <h3><a href="{{project.project_link}}" style="text-decoration: none; color: black;">{{project.title}}</a></h3>
+                            <p class="lead"><a href="{{project.project_link}}" style="text-decoration: none; color: grey; text-size: 12px;">
+                                Ознакомьтесь с объектом, нажмите здесь!
+                            </a></p>
+                            <p class="lead">{{project.about}}</p>
+                            <p class="lead"><strong>{{project.place}}</strong> | {{project.start}} - {{project.end}}</p>
+                            <p class="lead"></p><br><br>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+
+                <br><br><br>
+                <h2 class="text-center">Украина</h2>
+                <br><br>
+
+                <div class="row gx-4 gx-lg-2 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                        {% for project in old_projects %}
+                            <div class="column text-center" style="width: 50%;">
+                                <h4>{{project.title}}</h4>
+                                <br>
+                                <p class="lead">{{project.about}}</p>
+                                {% if project.start == project.end %}
+                                    <p class="lead"><strong>{{project.place}}</strong> | {{project.start}}</p><br><br>
+                                {% else %}
+                                    <p class="lead"><strong>{{project.place}}</strong> | {{project.start}} - {{project.end}}</p><br><br>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+                    </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container px-4">
+            <div class="row gx-4 justify-content-center">
+                <div class="col-lg-8">
+                    <h4>Наши контакты</h4>
+                    <br>
+                    <p class="lead"><strong>телефон: </strong> +48 884 797 600</p>
+                    <p class="lead"><strong>email: </strong> servecies@ttconsulting.com.pl</p>
+                    <p class="lead"><strong>адрес: </strong><a href="https://www.google.com/maps/place/Bankowa+36,+58-500+Jelenia+Góra/@50.9016664,15.7332107,18z/data=!3m1!4b1!4m5!3m4!1s0x470ede25510b482f:0x73c1df93b7146edf!8m2!3d50.9016664!4d15.7337811"  style="text-decoration: none; color: black; text-size: 12px;">
+                        ul. Bankowa 36, Jelenia Gora, Poland
+                    </a></p>
+                </div>
+            </div>
+        </div>
+            <br>
+            <br>
+            <div class="container px-4">
+                <div class="row gx-4 justify-content-center">
+                    <div class="col-lg-8">
+
+                        <h4>Мы можем связаться с Вами</h4>
+                        <br>
+                        <form action="{% url 'contact-form' %}" method="post" style="width: 85%;">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <button class="btn btn-dark mt-2 px-4" type="submit">отправить</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+        <script rel="text/javascript" src="{% static 'script.js' %}"></script>
+{% endblock %}

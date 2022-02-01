@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+    {{title}}
+{% endblock %}
+
+{% block content %}
+
+        <br><br><br><br><br>
+
+        <div class="row center" style="width: 90%;">
+            <style>
+                * {
+                    box-sizing: border-box;
+                }
+
+                body {
+                    margin: 0;
+                    font-family: Arial;
+                }
+
+                .header {
+                    text-align: center;
+                    padding: 32px;
+                }
+
+                .row {
+                    display: -ms-flexbox; /* IE10 */
+                    display: flex;
+                    -ms-flex-wrap: wrap; /* IE10 */
+                    flex-wrap: wrap;
+                    padding: 0 4px;
+                }
+
+                .column {
+                    -ms-flex: 25%; /* IE10 */
+                    flex: 25%;
+                    max-width: 25%;
+                    padding: 0 4px;
+                }
+
+                .column img {
+                    margin-top: 8px;
+                    vertical-align: middle;
+                    width: 100%;
+                }
+
+                @media screen and (max-width: 800px) {
+                    .column {
+                        -ms-flex: 50%;
+                        flex: 50%;
+                        max-width: 50%;
+                    }
+                }
+
+                @media screen and (max-width: 600px) {
+                    .column {
+                    -ms-flex: 100%;
+                    flex: 100%;
+                    max-width: 100%;
+                    }
+                }
+
+                .center {
+                    margin: auto;
+                    width: 60%;
+                    padding: 10px;
+                }
+            </style>
+
+
+            <div class="column">
+                <img src="https://sparta-bud.pl/wp-content/uploads/2019/11/8-1024x768.jpg" style="width:100%">
+                <img src="https://www.crystal-mountain.pl/_thumb/1600x900x80/banery/dji_0381-pano-2.jpg" style="width:100%">
+                <img src="https://sparta-bud.pl/wp-content/uploads/2019/11/2-2048x1536.jpg" style="width:100%">
+                <img src="https://sparta-bud.pl/wp-content/uploads/2019/11/aa-2048x1536.jpg" style="width:100%">
+                <img src="https://www.green-mountain.pl/wp-content/uploads/2019/05/DJI_0083-2.jpg" style="width:100%">
+                <img src="https://sparta-bud.pl/wp-content/uploads/2019/11/P90613-113620-2048x1536.jpg" style="width:100%">
+            </div>
+            <div class="column">
+                <img src="https://sparta-bud.pl/wp-content/uploads/2019/11/karpacz-11.jpeg" style="width:100%">
+                <img src="https://platinum-mountain.pl/wp-content/uploads/2021/07/Platinum-1.jpg" style="width:100%">
+                <img src="https://sparta-bud.pl/wp-content/uploads/2019/11/3-2048x1536.jpg" style="width:100%">
+                <img src="https://sparta-bud.pl/wp-content/uploads/2019/11/20180517_174458-2048x1152.jpg" style="width:100%">
+                <img src="https://sparta-bud.pl/wp-content/uploads/2019/11/karpacz-14-2048x1536.jpg" style="width:100%">
+                <img src="https://sparta-bud.pl/wp-content/uploads/2019/11/1.jpg" style="width:100%">
+            </div>
+            <div class="column">
+                <img src="https://www.green-mountain.pl/wp-content/uploads/2019/05/DJI_0034-1.jpg" style="width:100%">
+                <img src="https://sparta-bud.pl/wp-content/uploads/2019/11/4-2048x1536.jpg" style="width:100%">
+                <img src="https://sparta-bud.pl/wp-content/uploads/2019/11/6-2048x1536.jpg" style="width:100%">
+                <img src="https://sparta-bud.pl/wp-content/uploads/2019/11/6-2048x1536.jpg" style="width:100%">
+                <img src="https://sparta-bud.pl/wp-content/uploads/2019/11/5-2048x1536.jpg" style="width:100%">
+                <img src="https://platinum-mountain.pl/wp-content/uploads/2021/03/Platin-3-of-11.jpg" style="width:100%">
+            </div>
+            <div class="column">
+                <img src="https://sparta-bud.pl/wp-content/uploads/2019/11/karpacz-12-2048x1536.jpg" style="width:100%">
+                <img src="https://sparta-bud.pl/wp-content/uploads/2019/11/P90613-113620-2048x1536.jpg" style="width:100%">
+                <img src="https://platinum-mountain.pl/wp-content/uploads/2020/10/011.jpg" style="width:100%">
+                <img src="https://www.crystal-mountain.pl/_thumb/1600x900x80/banery/_dsc9425.jpeg" style="width:100%">
+                <img src="https://sparta-bud.pl/wp-content/uploads/2019/11/IMG-20180629-WA0003.jpg" style="width:100%">
+                <img src="https://sparta-bud.pl/wp-content/uploads/2019/11/karpacz-10-2048x1152.jpg" style="width:100%">
+            </div>
+        </div>
+
+        <br><br><br>
+
+{% endblock %}
