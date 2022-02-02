@@ -71,7 +71,7 @@ class NewEmployee(models.Model):
     last_name = models.CharField(max_length=100, verbose_name='фамилия')
     phone = models.BigIntegerField(verbose_name='телефон')
     year = models.IntegerField(max_length=10, verbose_name='год рождения')
-    location = models.CharField(max_length=100, verbose_name='местоположение')
+    location = models.CharField(max_length=100, verbose_name='город, в котором сейчас находитесь')
 
     def __str__(self):
         return f"{self.position} | {self.first_name} {self.last_name} {self.phone}"
