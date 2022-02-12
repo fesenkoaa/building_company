@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Contact, Project, OldProject, Vacancy, NewEmployee
+from .models import Contact, Project, OldProject, Vacancy, NewEmployee, Wallpaper
 
 
 class ContactAdmin(admin.ModelAdmin):
@@ -31,8 +31,14 @@ class NewEmployeeAdmin(admin.ModelAdmin):
     list_display = ('id', 'position', 'first_name', 'last_name', 'phone')
 
 
+class WallpaperAdmin(admin.ModelAdmin):
+
+    list = ('name', )
+
+
 admin.site.register(Contact, ContactAdmin)
 admin.site.register(Project, ProjectsAdmin)
 admin.site.register(OldProject, OldProjectsAdmin)
 admin.site.register(Vacancy, VacancyAdmin)
 admin.site.register(NewEmployee, NewEmployeeAdmin)
+admin.site.register(Wallpaper, WallpaperAdmin)

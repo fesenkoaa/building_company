@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views import View
 from django.contrib import messages
-from .models import Project, OldProject, Vacancy
+from .models import Project, OldProject, Vacancy, Wallpaper
 from .forms import ContactForm, NewEmployeeForm
 import requests
 from .config import token, chat_id
@@ -14,6 +14,7 @@ class MainPageView(View):
         old_projects = OldProject.objects.all()
         context = {
             "title": 'TTConsulting',
+            "bg": Wallpaper.objects.first(),
             "form": form,
             "projects": projects,
             "old_projects": old_projects
@@ -32,7 +33,7 @@ class SendMessage(View):
                 phone = form.cleaned_data['phone']
                 email = form.cleaned_data['email']
                 message = form.cleaned_data['message']
-                msg = f'TTC BUILDING : КОНТАКТ\n\n' \
+                msg = f'TTCONSULTING: Свяжитесь со мной\n\n' \
                       f'автор: {auth}\n' \
                       f'телефон: {phone}\n' \
                       f'email: {email}\n' \

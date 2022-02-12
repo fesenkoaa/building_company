@@ -1,6 +1,12 @@
 from django.db import models
 
 
+class Wallpaper(models.Model):
+
+    name = models.CharField(max_length=20)
+    image = models.ImageField()
+
+
 class Contact(models.Model):
 
     first_name = models.CharField(max_length=50, verbose_name='Name')

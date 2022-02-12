@@ -7,12 +7,22 @@
 {% endblock %}
 
 {% block content %}
-        <header class="bg-dark text-white">
-            <div class="container px-4 text-center">
-                <h1 class="fw-bolder">TTConsulting </h1>
-                <p class="lead">Мы те, кто может!</p>
-<!--                <a class="btn btn-lg btn-light" href="#about">Who we are?</a>-->
-            </div>
+<br><br>
+        <header style="background-image: url('https://images.unsplash.com/photo-1598171182339-b24dd64241a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80')">
+        <br><br><br><br><br><br>
+        <div class="container px-4" id="main-article" style="width: 75%">
+                <style>
+                    #main-article {
+                        border-radius: 25px;
+                        background: rgba(0,0,0,0.35);
+                        padding: 15px;
+                    }
+                </style>
+            <h1 class="text-center" style="font-size: 50px; color: #ffcc00;"><span style="color: red;">TT</span><span>CONSULTING</span></h1>
+            <h6 class="text-center" style="font-size: 20px; color: #ffcc00;">строительная компания</h6>
+        </div>
+
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         </header>
 
         <div class="text-center">
@@ -42,11 +52,11 @@
                         <p class="lead"><strong>Наши ценности – это принципы компании, служащие ориентиром для выполнения работы:</strong></p>
                         <ul>
                             <br>
-                            <li><strong>СТРАСТЬ</strong> -  We want to be the best in everything we do. We work vigorously, we are involved and we try to be the best in our field. We always strive for the best results.</li>
+                            <li><strong>СТРАСТЬ</strong> – Мы хотим быть лучшими во всем, что делаем. Мы работаем энергично, вовлечены в дело и стараемся быть лучшими в своей отрасли. Мы всегда стремимся добиться наилучших результатов.</li>
                             <br>
-                            <li><strong>РЕПУТАЦИЯ</strong> - Мы устанавливаем высокие стандарты и всегда держим свое слово. Благодаря такому подходу мы завоевали доверие клиентов.</li>
+                            <li><strong>РЕПУТАЦИЯ</strong> – Мы устанавливаем высокие стандарты и всегда держим свое слово. Благодаря такому подходу мы завоевали доверие клиентов.</li>
                             <br>
-                            <li><strong>ЧЕСТНОСТЬ</strong> - Мы всегда берем на себя ответственность за правильность нашей работы.</li>
+                            <li><strong>ЧЕСТНОСТЬ</strong> – Мы всегда берем на себя ответственность за правильность нашей работы.</li>
                         </ul>
                         <br>
                         <p class="lead"><strong>Наши цели:</strong></p>
@@ -65,7 +75,7 @@
             <br><br>
         </section>
 
-        <section class="bg-light" id="services">
+        <section class="bg-light" id="services" style="background-image: url('https://images.unsplash.com/photo-1584531979583-18c5c4b25efc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80')">
             <div class="container px-4 text-center">
                 <h2 class="text-center">Польша</h2>
                 <br><br>
@@ -158,6 +168,7 @@
                                     <p class="lead"><strong>{{project.place}}</strong> | {{project.start}} - {{project.end}}</p><br><br>
                                 {% endif %}
                             </div>
+                    <br>
                         {% endfor %}
                     </div>
             </div>
