@@ -1,10 +1,5 @@
 from django.db import models
-
-
-class Wallpaper(models.Model):
-
-    name = models.CharField(max_length=20)
-    image = models.ImageField()
+from django.urls import reverse
 
 
 class Contact(models.Model):
@@ -31,9 +26,13 @@ class Project(models.Model):
     project_link = models.CharField(max_length=500, verbose_name='Link')
     start = models.IntegerField(verbose_name='Year of start')
     end = models.IntegerField(verbose_name='Year of end', null=True)
+    image = models.ImageField()
 
     def __str__(self):
         return f"{self.title}"
+
+    def get_absolute_url(self):
+        return reverse('product_detail', kwargs={"id": self.id})
 
     class Meta:
         ordering = '-end',

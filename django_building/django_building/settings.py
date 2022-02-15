@@ -1,14 +1,7 @@
 from pathlib import Path
+import os
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-
-
-SECRET_KEY = 'django-insecure-afxic5t3oabm3wq%%42+ik6%ln_8ecxg6j%8gg_j^ft50-4wg%'
-
-DEBUG = True
-
-ALLOWED_HOSTS = []
-
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Application definition
 
@@ -20,10 +13,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'building_business_card',
-    'django_extensions'
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -38,7 +32,7 @@ ROOT_URLCONF = 'django_building.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [f'{BASE_DIR}/templates'],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -89,7 +83,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Warsaw'
 
 USE_I18N = True
 
@@ -97,9 +91,18 @@ USE_L10N = True
 
 USE_TZ = True
 
+# Static files (CSS, JavaScript, Images)
 
-STATIC_URL = f'{BASE_DIR}/building_business_card/static/'
 
+STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# add 'whitenoise.middleware.WhiteNoiseMiddleware' to MIDDLEWARE and
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# python manage.py collectstatic
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+from .local_settings import *  # is using on debug version
+# from .prod_settings import *  # is using on production version
 

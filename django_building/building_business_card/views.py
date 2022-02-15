@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views import View
 from django.contrib import messages
-from .models import Project, OldProject, Vacancy, Wallpaper
+from .models import Project, OldProject, Vacancy
 from .forms import ContactForm, NewEmployeeForm
 import requests
 from .config import token, chat_id
@@ -14,7 +14,6 @@ class MainPageView(View):
         old_projects = OldProject.objects.all()
         context = {
             "title": 'TTConsulting',
-            "bg": Wallpaper.objects.first(),
             "form": form,
             "projects": projects,
             "old_projects": old_projects

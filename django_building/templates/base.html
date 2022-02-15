@@ -26,23 +26,19 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="#about">О нас</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#services">Проекты</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'gallery' %}">Галерея</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">Контакты</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'vacancies' %}">Вакансии</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    {% elif request.path == '/gallery/' %}
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-            <div class="container px-4">
-                <a class="navbar-brand" href="#page-top" style="color: #e6b800;"><strong><span style="color: red;">TT</span><span>CONSULTING</span></strong></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="{% url 'main' %}">Главная страница</a></li>
+                        <li class="nav-item text-center"><a class="nav-link" href="{% url 'main' %}">Главная</a></li>
+                        <li class="nav-item text-center"><a class="nav-link" href="#contact">Контакты</a></li>
+                        <li class="nav-item text-center"><a class="nav-link" href="{% url 'vacancies' %}">Вакансии</a></li>
+                        <li class="nav-item text-center"><a class="nav-link" href=""></a></li>
+                        <li class="nav-item text-center"><a class="nav-link" href=""></a></li>
+                        {% if request.path == '/' %}
+                            <li class="nav-item text-center"><a class="nav-link" href="#"><strong>RU</strong></a></li>
+                        {% else %}
+                            <li class="nav-item text-center"><a class="nav-link" href="#">RU</a></li>
+                        {% endif %}
+                        <li class="nav-item text-center"><a class="nav-link" href="#">PL</a></li>
+                        <li class="nav-item text-center"><a class="nav-link" href="#">EN</a></li>
+                        <li class="nav-item text-center"><a class="nav-link" href="#">ES</a></li>
                     </ul>
                 </div>
             </div>
@@ -54,7 +50,7 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="{% url 'main' %}">Главная страница</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'main' %}">вернутся на главную</a></li>
                     </ul>
                 </div>
             </div>
@@ -65,10 +61,71 @@
         {% endblock %}
 
         <footer class="py-3 bg-dark">
-            <div class="container px-4"><p class="m-0 text-center text-white"><strong>"TTConsulting" Since 2004</strong></p></div>
-            <div class="container px-4"><p class="m-0 text-center text-white">
-                <a href="https://www.linkedin.com/in/andrew-fesenko-9b5313206/" style="text-decoration: none; color: white;">created by fesenkoaa</a>
-            </p></div>
+            <br><br>
+            <div class="container py-5">
+            <div class="row">
+                <div class="col-lg-3 mb-3 text-center">
+                    <a style="font-size: 25px;" class="d-inline-flex align-items-center mb-2 link-light text-decoration-none" href="/" aria-label="Bootstrap">
+                        <strong><span style="color: red;">TT</span><span style="color: #e6b800;">CONSULTING</span></strong>
+                    </a>
+                    <br>
+                    <ul class="list-unstyled small text-light">
+                        <li class="mb-2 text-center" style="font-size: 20px;"><strong>Мы – сделаем!</strong></li>
+                    </ul>
+                    <br>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2 text-light">Created by <a href="https://www.linkedin.com/in/andrew-fesenko-9b5313206/" style="text-decoration: none; color: #80aaff;">fesenkoaa</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2 mb-3 text-light">
+                    <h5></h5>
+                    <br>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" style="text-decoration: none; color: white;"></a></li>
+                        <li class="mb-2"><a href="#" style="text-decoration: none; color: white;"></a></li>
+                        <li class="mb-2"><a href="#" style="text-decoration: none; color: white;"></a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2 mb-3 text-light">
+                    <h5></h5>
+                    <br>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" style="text-decoration: none; color: white;"></a></li>
+                        <li class="mb-2"><a href="#" style="text-decoration: none; color: white;"></a></li>
+                        <li class="mb-2"><a href="#" style="text-decoration: none; color: white;"></a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2 mb-3 text-light">
+                    <ul class="list-unstyled">
+                        <li class="mb-2 text-center"><a href="{% url 'main' %}" style="text-decoration: none; color: white; font-size: 20px;">Главная</a></li>
+                        <li class="mb-2 text-center"><a href="#contact" style="text-decoration: none; color: white; font-size: 20px;">Контакты</a></li>
+                        <li class="mb-2 text-center"><a href="{% url 'vacancies' %}" style="text-decoration: none; color: white; font-size: 20px;">Вакансии</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2 mb-3 text-light">
+                    <ul class="list-unstyled">
+                        <li class="mb-2" style="text-decoration: none; color: white; font-size: 20px;">+48 884 797 600</li>
+                        <li class="mb-2" style="text-decoration: none; color: white; font-size: 20px;">info@ttconsulting.com.pl</li>
+                        <li class="mb-2" style="text-decoration: none; color: white; font-size: 20px;">Jelenia Gora, Poland</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+            <style>
+                .tab {
+                    display: inline-block;
+                    margin-left: 40px;
+                }
+            </style>
+            <p class="text-light text-center">
+                <a href="#" style="text-decoration: none; color: white; font-size: 14px;"><span>Russian</span></a>
+                <span class="tab"></span>
+                <a href="#" style="text-decoration: none; color: white; font-size: 14px;"><span>Polish</span></a>
+                <span class="tab"></span>
+                <a href="#" style="text-decoration: none; color: white; font-size: 14px;"><span>English</span></a>
+                <span class="tab"></span>
+                <a href="#" style="text-decoration: none; color: white; font-size: 14px;"><span>Spanish</span></a>
+            </p>
         </footer>
     </body>
 </html>

@@ -9,7 +9,7 @@
 {% block content %}
     <header class="bg-dark text-white">
         <div class="container px-4 text-center">
-            <h1 class="fw-bolder">TTConsulting набирает новых сотрудников!</h1>
+            <h2 class="fw-bolder"><strong><span style="color: red;">TT</span><span style="color: #ffcc00;">CONSULTING</span></strong> набирает новых сотрудников!</h2>
         </div>
     </header>
 
@@ -29,9 +29,20 @@
         {% endif %}
     </div>
 
-        <section id="about">
-            <div class="container px-4">
-                <div class="row gx-4 justify-content-center">
+        <section id="about" style="background-image: url('{% static 'bg_vac1.jpeg' %}')">
+            <div class="container px-4" id="main-article1">
+                <style>
+                    #main-article1 {
+                        border-radius: 25px;
+                        background: rgba(0,0,0,0.75);
+                        padding: 8px;
+                        width: 80%;
+                        padding-left: auto;
+                        padding-right: auto;
+                    }
+                </style>
+                <br>
+                <div class="row gx-4 justify-content-center text-light">
                     <div class="col-lg-8">
                         <p class="lead"><strong>Мы предлагаем:</strong></p>
                         <ul>
@@ -56,48 +67,71 @@
                         </ul>
                         <br>
                         <br>
-                        <br>
-                        <p class="text-center"><a href="#vacancies" style="text-decoration: none; color: grey;">ИЩИТЕ ВАКАНСИИ НИЖЕ</a></p>
+                        <p class="text-center"><a href="#vacancies" style="text-decoration: none; color: grey;">ОСТАВТЕ ЗАЯВКУ НИЖЕ</a></p>
                     </div>
                 </div>
             </div>
         </section>
 
-    <section class="bg-light" id="vacancies">
-        <div class="container px-4">
-            <h2 class="text-center">Доступные вакансии:</h2>
-                <br>
-                <br>
-                <br>
-            {% for vacancy in vacancies %}
-            <div class="row gx-4 justify-content-center">
+<!--    <section class="bg-light" style="background-image: url('{% static '#' %}')">-->
+<!--        <div class="container px-4 text-light" id="main-article2">-->
+<!--            <br>-->
+<!--            <style>-->
+<!--                    #main-article2 {-->
+<!--                        border-radius: 25px;-->
+<!--                        background: rgba(0,0,0,0.75);-->
+<!--                        padding: 8px;-->
+<!--                        width: 80%;-->
+<!--                        padding-left: auto;-->
+<!--                        padding-right: auto;-->
+<!--                    }-->
+<!--                </style>-->
+<!--            <h2 class="text-center">Доступные вакансии:</h2>-->
+<!--                <br>-->
+<!--                <br>-->
+<!--                <br>-->
+<!--            {% for vacancy in vacancies %}-->
+<!--            <div class="row gx-4 justify-content-center">-->
+<!--                <div class="col-lg-8">-->
+<!--                    <h6 class="lead text-center"><strong>{{ vacancy.position.upper }}</strong></h6>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <br>-->
+<!--            <br>-->
+<!--            <br>-->
+<!--            {% endfor %}-->
+<!--            <p class="text-center"><a href="#contact" style="text-decoration: none; color: grey;">ЗАПОЛНИТЕ ФОРМУ НИЖЕ, ЧТОБЫ ПОДАТЬ ЗАЯВКУ НА ВАКАНСИЮ</a></p>-->
+<!--        </div>-->
+<!--    </section>-->
+
+    <section id="contact" style="background-image: url('{% static 'bg_vac3.jpeg' %}')">
+        <div class="container px-4" id="main-article3">
+            <br>
+            <style>
+                    #main-article3 {
+                        border-radius: 25px;
+                        background: rgba(0,0,0,0.75);
+                        padding: 8px;
+                        width: 80%;
+                        padding-left: auto;
+                        padding-right: auto;
+                    }
+                </style>
+            <div class="row gx-4 justify-content-center text-light">
                 <div class="col-lg-8">
-                    <h6 class="lead text-center">{{ vacancy.position.upper }}</h6>
+                    <h4>Заполните форму, выбрав одну из доступных вакансий:</h4>
+                    <br>
+                    <form action="{% url 'vacancies-form' %}" method="post" style="width: 85%;">
+                        {% csrf_token %}
+                        {{ form }}
+                        <br>
+                        <button class="btn btn-danger mt-2 px-4" type="submit">подать заявку</button>
+                        <br><br>
+                    </form>
                 </div>
             </div>
-            <br>
-            <br>
-            <br>
-            {% endfor %}
-            <p class="text-center"><a href="#contact" style="text-decoration: none; color: grey;">ЗАПОЛНИТЕ ФОРМУ НИЖЕ, ЧТОБЫ ПОДАТЬ ЗАЯВКУ НА ВАКАНСИЮ</a></p>
         </div>
     </section>
-
-    <section id="contact">
-            <div class="container px-4">
-                <div class="row gx-4 justify-content-center">
-                    <div class="col-lg-8">
-                        <h3>Отправьте заявку</h3>
-                        <br>
-                        <form action="{% url 'vacancies-form' %}" method="post" style="width: 85%;">
-                            {% csrf_token %}
-                            {{ form }}
-                            <button class="btn btn-dark mt-2 px-4" type="submit">подать заявку</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
