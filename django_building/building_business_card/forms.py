@@ -1,14 +1,14 @@
 from django import forms
-from .models import Contact, NewEmployee, Vacancy
+from .models import Contact, NewEmployee
 
 
 class ContactForm(forms.ModelForm):
     first_name = forms.CharField(
-        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': '* имя'}),
+        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': '* imię'}),
         label="", required=True
     )
     phone = forms.IntegerField(
-        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': '* телефон без "+"'}),
+        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': '* telefon bez "+"'}),
         label="", required=True
     )
     email = forms.EmailField(
@@ -16,7 +16,7 @@ class ContactForm(forms.ModelForm):
         label="", required=False
     )
     message = forms.CharField(
-        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': '* сообщение'}),
+        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': '* wiadomość'}),
         label="", required=True
     )
 
@@ -35,7 +35,7 @@ class NewEmployeeForm(forms.ModelForm):
             'position': forms.Select(attrs={'class': 'form-control'}),
             'first_name': forms.TextInput(attrs={'class': 'form-control'}),
             'last_name': forms.TextInput(attrs={'class': 'form-control'}),
-            'phone': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'номер без "+"'}),
+            'phone': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'telefon bez "+"'}),
             'year': forms.TextInput(attrs={'class': 'form-control'}),
             'location': forms.TextInput(attrs={'class': 'form-control'}),
         }

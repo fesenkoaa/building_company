@@ -1,0 +1,199 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+    {{title}}
+{% endblock %}
+
+{% block content %}
+<br><br>
+        <header style="background-image: url('{% static 'beton_wall.jpeg' %}')">
+        <br><br><br><br><br><br>
+        <div class="container px-4" id="main-article1" style="width: 580px">
+                <style>
+                    #main-article1 {
+                        border-radius: 25px;
+                        background: rgba(0,0,0,0.35);
+                        padding: 15px;
+                    }
+                </style>
+            <h1 class="text-center" style="font-size: 50px; color: #ffcc00;"><span style="color: red;">TT</span><span>CONSULTING</span></h1>
+            <h6 class="text-center" style="font-size: 30px; color: #ffcc00;">будівельна компанія</h6>
+        </div>
+
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        </header>
+
+        <div class="text-center">
+            {% if messages %}
+                {% for message in messages %}
+                    {% if message.tags == 'success' %}
+                        <div class="alert alert-success" role="alert">
+                            {{ message }}
+                        </div>
+                    {% else %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ message }}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </div>
+
+        <section class="bg-light" id="services" style="background-image: url('{% static 'bg5.jpeg' %}')">
+            <div class="container px-4 text-light" id="main-article2">
+                <style>
+                    #main-article2 {
+                        border-radius: 25px;
+                        background: rgba(0,0,0,0.50);
+                        padding: 8px;
+                        width: 80%;
+                        padding-left: auto;
+                        padding-right: auto;
+                    }
+                </style>
+                <br><br>
+                <div class="row gx-4 justify-content-center">
+                    <div class="col-lg-8">
+                        <h2>Хто ми?</h2>
+                        <br><br>
+                        <h5>Наша компанія працює <strong>15</strong> років на ринку будівництва та має понад <strong>80</strong> виконаних об'єктів!</h5>
+                        <br>
+                        <p class="lead"><strong>Наші цінності - це принципи компанії, які є основними орієнтирами у виконанні робіт:</strong></p>
+                        <ul>
+                            <br>
+                            <li><strong>Пристрасть</strong> – Ми бажаємо бути найкращими у всьому, що робимо.
+                                Ми працюємо енергійно, залучені до справи і намагаємося бути найкращими у своїй галузі.
+                                Ми завжди прагнемо досягти найкращих результатів.</li>
+                            <br>
+                            <li><strong>Репутація</strong> – Ми встановлюємо високі стандарти і завжди тримаємо слово.
+                                Завдяки цьому ми завоювали довіру клієнтів.</li>
+                            <br>
+                            <li><strong>Чесність</strong> – Ми завжди несемо відповідальність за якість своєї роботи.</li>
+                        </ul>
+                        <br>
+                        <p class="lead"><strong>Наша мета:</strong></p>
+                        <ul>
+                            <br>
+                            <li>своєчасна реалізація якісних будівельних проектів для наших клієнтів</li>
+                            <br>
+                            <li>забезпечення високої якості співробітництва</li>
+                            <br>
+                            <li>постійний професійний розвиток наших співробітників</li>
+                        </ul>
+                        <br>
+                        <p class="text-center"><a href="#vacancies" style="text-decoration: none; color: #bfbfbf;">ШУКАЙ НАШІ РОБОТИ НИЖЧЕ</a></p>
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+
+        <section class="bg-light" id="services" style="background-image: url('{% static 'bg1.png' %}')">
+        <div class="container px-4" id="main-article3">
+                <style>
+                    #main-article3 {
+                        border-radius: 25px;
+                        background: rgba(0,0,0,0.55);
+                        padding: 8px;
+                        width: 80%;
+                        padding-left: auto;
+                        padding-right: auto;
+                    }
+                </style>
+                <br>
+                <h3 class="text-center text-light">Польща</h3>
+                <br>
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                    {% for project in projects %}
+                        <div class="column text-center" style="width: 50%;">
+                            <br>
+                            <h3><a href="{{project.project_link}}" style="text-decoration: none; color: white;">{{project.title}}</a></h3>
+                            <p class="lead text-light"><a href="{{project.project_link}}" style="text-decoration: none; color: grey; text-size: 12px;">
+                            </a></p>
+                            <p class="lead text-light">{{project.about}}</p>
+                            <p class="lead text-light"><strong>{{project.place}}</strong> | {{project.start}} - {{project.end}}</p>
+                            <p class="lead text-light"></p><br><br>
+                        </div>
+                        {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-light" id="services" style="background-image: url('{% static 'bg2.jpeg' %}')">
+            <div class="container px-4" id="main-article4">
+                <style>
+                    #main-article4 {
+                        border-radius: 25px;
+                        background: rgba(0,0,0,0.65);
+                        padding: 8px;
+                        width: 80%;
+                        padding-left: auto;
+                        padding-right: auto;
+                    }
+                </style>
+                <br>
+                <h3 class="text-center text-light">Україна</h3>
+                <br>
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                    {% for project in old_projects %}
+                        <div class="column text-center" style="width: 50%;">
+                            <h4><a href="{{project.project_link}}" style="text-decoration: none; color: white;">{{project.title}}</a></h4>
+                            <p class="lead text-light"><a href="{{project.project_link}}" style="text-decoration: none; color: grey; text-size: 12px;">
+                            </a></p>
+                            <p class="lead text-light">{{project.about}}</p>
+                            <p class="lead text-light"><strong>{{project.place}}</strong> | {{project.start}} - {{project.end}}</p>
+                            <p class="lead text-light"></p><br><br>
+                        </div>
+                        {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-light" id="contact" style="background-image: url({% static 'bg3.png' %})">
+            <div class="container px-4" id="main-article5">
+                <style>
+                    #main-article5 {
+                        border-radius: 25px;
+                        background: rgba(0,0,0,0.45);
+                        padding: 8px;
+                        width: 80%;
+                        padding-left: auto;
+                        padding-right: auto;
+                    }
+                </style>
+                <div class="row gx-4 justify-content-center text-light">
+                    <div class="col-lg-8">
+                        <br>
+                        <h4>Наші контакти</h4>
+                        <br>
+                        <p class="lead"><strong>телефон: </strong> +48 884 797 600</p>
+                        <p class="lead"><strong>email: </strong> info@ttconsulting.com.pl</p>
+                        <p class="lead"><strong>адреса: </strong><a href="https://www.google.com/maps/place/Bankowa+36,+58-500+Jelenia+Góra/@50.9016664,15.7332107,18z/data=!3m1!4b1!4m5!3m4!1s0x470ede25510b482f:0x73c1df93b7146edf!8m2!3d50.9016664!4d15.7337811"  style="text-decoration: none; color: white; text-size: 12px;">
+                            ul. Bankowa 36, Jelenia Gora, Poland
+                        </a></p>
+                    </div>
+                </div>
+                <br>
+                <div class="row gx-4 justify-content-center text-light">
+                    <div class="col-lg-8">
+
+                        <h4>Можемо зв'язатися з Вами</h4>
+                        <br>
+                        <form action="{% url 'ru:contact-form' %}" method="post" style="width: 85%;">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <button class="btn btn-danger mt-2 px-4" type="submit">відправити</button>
+                        <br><br>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+        <script rel="text/javascript" src="{% static 'script.js' %}"></script>
+{% endblock %}

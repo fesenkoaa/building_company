@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponseRedirect, reverse
 from django.views import View
 from django.contrib import messages
 from .models import Project, OldProject, Vacancy
@@ -42,23 +42,14 @@ class SendMessage(View):
 
                 form.save()
                 messages.success(request, 'ваше сообщение было отправлено')
-                return redirect('main')
+                return HttpResponseRedirect(reverse('pl:main'))
 
             except ValueError:
                 messages.error(request, 'форма была заполнена неправильно')
-                return redirect('main')
+                return HttpResponseRedirect(reverse('pl:main'))
 
         messages.error(request, 'форма была заполнена неправильно')
-        return redirect('main')
-
-
-class GalleryPage(View):
-
-    def get(self, request):
-        context = {
-            'title': 'TTC Gallery',
-        }
-        return render(request, 'gallery.html', context)
+        return HttpResponseRedirect(reverse('pl:main'))
 
 
 class VacanciesView(View):
@@ -97,11 +88,11 @@ class SendBid(View):
                 requests.get(f'https://api.telegram.org/bot{token}/sendMessage?chat_id={chat_id}&text={msg}')
                 form.save()
                 messages.success(request, 'ваша заявка отправлена')
-                return redirect('main')
+                return HttpResponseRedirect(reverse('pl:main'))
 
             except ValueError:
                 messages.error(request, 'форма была заполнена неправильно')
-                return redirect('vacancies')
+                return HttpResponseRedirect(reverse('pl:vacancies'))
 
         messages.error(request, 'форма была заполнена неправильно')
-        return redirect('vacancies')
+        return HttpResponseRedirect(reverse('pl:vacancies'))

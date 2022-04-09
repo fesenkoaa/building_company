@@ -13,6 +13,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'building_business_card',
+    'building_rus',
+    'building_eng',
     'django_extensions',
 ]
 

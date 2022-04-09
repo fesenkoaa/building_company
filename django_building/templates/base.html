@@ -26,19 +26,16 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item text-center"><a class="nav-link" href="{% url 'main' %}">Главная</a></li>
-                        <li class="nav-item text-center"><a class="nav-link" href="#contact">Контакты</a></li>
-                        <li class="nav-item text-center"><a class="nav-link" href="{% url 'vacancies' %}">Вакансии</a></li>
+                        <li class="nav-item text-center"><a class="nav-link" href="{% url 'pl:main' %}">Główna</a></li>
+                        <li class="nav-item text-center"><a class="nav-link" href="#contact">Kontakt</a></li>
+                        <li class="nav-item text-center"><a class="nav-link" href="{% url 'pl:vacancies' %}">Oferty pracy</a></li>
+
                         <li class="nav-item text-center"><a class="nav-link" href=""></a></li>
                         <li class="nav-item text-center"><a class="nav-link" href=""></a></li>
-                        {% if request.path == '/' %}
-                            <li class="nav-item text-center"><a class="nav-link" href="#"><strong>RU</strong></a></li>
-                        {% else %}
-                            <li class="nav-item text-center"><a class="nav-link" href="#">RU</a></li>
-                        {% endif %}
-                        <li class="nav-item text-center"><a class="nav-link" href="#">PL</a></li>
-                        <li class="nav-item text-center"><a class="nav-link" href="#">EN</a></li>
-                        <li class="nav-item text-center"><a class="nav-link" href="#">ES</a></li>
+
+                        <li class="nav-item text-center"><a class="nav-link" href="{% url 'pl:main' %}"><strong>PL</strong></a></li>
+                        <li class="nav-item text-center"><a class="nav-link" href="{% url 'ru:main' %}">UA</a></li>
+                        <li class="nav-item text-center"><a class="nav-link" href="{% url 'en:main' %}">EN</a></li>
                     </ul>
                 </div>
             </div>
@@ -50,7 +47,100 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="{% url 'main' %}">вернутся на главную</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'pl:main' %}">Główna</a></li>
+                        <li class="nav-item text-center"><a class="nav-link" href="#contact">Kontakt</a></li>
+                        <li class="nav-item text-center"><a class="nav-link" href="{% url 'pl:vacancies' %}">Oferty pracy</a></li>
+
+                        <li class="nav-item text-center"><a class="nav-link" href=""></a></li>
+                        <li class="nav-item text-center"><a class="nav-link" href=""></a></li>
+
+                        <li class="nav-item text-center"><a class="nav-link" href="{% url 'pl:vacancies' %}"><strong>PL</strong></a></li>
+                        <li class="nav-item text-center"><a class="nav-link" href="{% url 'ru:vacancies' %}">UA</a></li>
+                        <li class="nav-item text-center"><a class="nav-link" href="{% url 'en:vacancies' %}">EN</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    {% elif request.path == '/ru/' %}
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+            <div class="container px-4">
+                <a class="navbar-brand" href="#page-top" style="color: #e6b800;"><strong><span style="color: red;">TT</span><span>CONSULTING</span></strong></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item text-center"><a class="nav-link" href="{% url 'ru:main' %}">Головна</a></li>
+                        <li class="nav-item text-center"><a class="nav-link" href="#contact">Контакти</a></li>
+                        <li class="nav-item text-center"><a class="nav-link" href="{% url 'ru:vacancies' %}">Вакансії</a></li>
+
+                        <li class="nav-item text-center"><a class="nav-link" href=""></a></li>
+                        <li class="nav-item text-center"><a class="nav-link" href=""></a></li>
+
+                        <li class="nav-item text-center"><a class="nav-link" href="{% url 'pl:main' %}">PL</a></li>
+                        <li class="nav-item text-center"><a class="nav-link" href="{% url 'ru:main' %}"><strong>UA</strong></a></li>
+                        <li class="nav-item text-center"><a class="nav-link" href="{% url 'en:main' %}">EN</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    {% elif request.path == '/ru/vacancies/' %}
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+            <div class="container px-4">
+                <a class="navbar-brand" href="#page-top" style="color: #e6b800;"><strong><span style="color: red;">TT</span><span>CONSULTING</span></strong></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="{% url 'ru:main' %}">Головна</a></li>
+                        <li class="nav-item text-center"><a class="nav-link" href="#contact">Контакти</a></li>
+                        <li class="nav-item text-center"><a class="nav-link" href="{% url 'ru:vacancies' %}">Вакансії</a></li>
+
+                        <li class="nav-item text-center"><a class="nav-link" href=""></a></li>
+                        <li class="nav-item text-center"><a class="nav-link" href=""></a></li>
+
+                        <li class="nav-item text-center"><a class="nav-link" href="{% url 'pl:vacancies' %}">PL</a></li>
+                        <li class="nav-item text-center"><a class="nav-link" href="{% url 'ru:vacancies' %}"><strong>UA</strong></a></li>
+                        <li class="nav-item text-center"><a class="nav-link" href="{% url 'en:vacancies' %}">EN</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    {% elif request.path == '/en/' %}
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+            <div class="container px-4">
+                <a class="navbar-brand" href="#page-top" style="color: #e6b800;"><strong><span style="color: red;">TT</span><span>CONSULTING</span></strong></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item text-center"><a class="nav-link" href="{% url 'en:main' %}">Main</a></li>
+                        <li class="nav-item text-center"><a class="nav-link" href="#contact">Contacts</a></li>
+                        <li class="nav-item text-center"><a class="nav-link" href="{% url 'en:vacancies' %}">Vacancies</a></li>
+
+                        <li class="nav-item text-center"><a class="nav-link" href=""></a></li>
+                        <li class="nav-item text-center"><a class="nav-link" href=""></a></li>
+
+                        <li class="nav-item text-center"><a class="nav-link" href="{% url 'pl:main' %}">PL</a></li>
+                        <li class="nav-item text-center"><a class="nav-link" href="{% url 'ru:main' %}">UA</a></li>
+                        <li class="nav-item text-center"><a class="nav-link" href="{% url 'en:main' %}"><strong>EN</strong></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    {% elif request.path == '/en/vacancies/' %}
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+            <div class="container px-4">
+                <a class="navbar-brand" href="#page-top" style="color: #e6b800;"><strong><span style="color: red;">TT</span><span>CONSULTING</span></strong></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="{% url 'en:main' %}">Main</a></li>
+                        <li class="nav-item text-center"><a class="nav-link" href="#contact">Contacts</a></li>
+                        <li class="nav-item text-center"><a class="nav-link" href="{% url 'en:vacancies' %}">Vacancies</a></li>
+
+                        <li class="nav-item text-center"><a class="nav-link" href=""></a></li>
+                        <li class="nav-item text-center"><a class="nav-link" href=""></a></li>
+
+                        <li class="nav-item text-center"><a class="nav-link" href="{% url 'pl:vacancies' %}">PL</a></li>
+                        <li class="nav-item text-center"><a class="nav-link" href="{% url 'ru:vacancies' %}">UA</a></li>
+                        <li class="nav-item text-center"><a class="nav-link" href="{% url 'en:vacancies' %}"><strong>EN</strong></a></li>
                     </ul>
                 </div>
             </div>
@@ -70,7 +160,16 @@
                     </a>
                     <br>
                     <ul class="list-unstyled small text-light">
-                        <li class="mb-2 text-center" style="font-size: 20px;"><strong>Мы – сделаем!</strong></li>
+                        {% if request.path == '/' %}
+                        <li class="mb-2 text-center" style="font-size: 20px;"><strong>Zrobimy!</strong></li>
+                        <li class="mb-2 text-center" style="font-size: 15px;"><strong>pracuje od 2004 roku</strong></li>
+                        {% elif 'ru' in request.path %}
+                        <li class="mb-2 text-center" style="font-size: 20px;"><strong>Ми зробимо!</strong></li>
+                        <li class="mb-2 text-center" style="font-size: 15px;"><strong>працюємо з 2004 року</strong></li>
+                        {% elif 'en' in request.path %}
+                        <li class="mb-2 text-center" style="font-size: 20px;"><strong>We will do!</strong></li>
+                        <li class="mb-2 text-center" style="font-size: 15px;"><strong>work since 2004</strong></li>
+                        {% endif %}
                     </ul>
                     <br>
                     <ul class="list-unstyled small">
@@ -97,9 +196,19 @@
                 </div>
                 <div class="col-6 col-lg-2 mb-3 text-light">
                     <ul class="list-unstyled">
-                        <li class="mb-2 text-center"><a href="{% url 'main' %}" style="text-decoration: none; color: white; font-size: 20px;">Главная</a></li>
-                        <li class="mb-2 text-center"><a href="#contact" style="text-decoration: none; color: white; font-size: 20px;">Контакты</a></li>
-                        <li class="mb-2 text-center"><a href="{% url 'vacancies' %}" style="text-decoration: none; color: white; font-size: 20px;">Вакансии</a></li>
+                        {% if 'ru' in request.path %}
+                        <li class="mb-2 text-center"><a href="{% url 'ru:main' %}" style="text-decoration: none; color: white; font-size: 20px;">Головна</a></li>
+                        <li class="mb-2 text-center"><a href="#contact" style="text-decoration: none; color: white; font-size: 20px;">Контакти</a></li>
+                        <li class="mb-2 text-center"><a href="{% url 'ru:vacancies' %}" style="text-decoration: none; color: white; font-size: 20px;">Вакансії</a></li>
+                        {% elif 'en' in request.path %}
+                        <li class="mb-2 text-center"><a href="{% url 'en:main' %}" style="text-decoration: none; color: white; font-size: 20px;">Main</a></li>
+                        <li class="mb-2 text-center"><a href="#contact" style="text-decoration: none; color: white; font-size: 20px;">Contacts</a></li>
+                        <li class="mb-2 text-center"><a href="{% url 'en:vacancies' %}" style="text-decoration: none; color: white; font-size: 20px;">Vacancies</a></li>
+                        {% else %}
+                        <li class="mb-2 text-center"><a href="{% url 'pl:main' %}" style="text-decoration: none; color: white; font-size: 20px;">Główna</a></li>
+                        <li class="mb-2 text-center"><a href="#contact" style="text-decoration: none; color: white; font-size: 20px;">Kontakt</a></li>
+                        <li class="mb-2 text-center"><a href="{% url 'pl:vacancies' %}" style="text-decoration: none; color: white; font-size: 20px;">Oferty pracy</a></li>
+                        {% endif %}
                     </ul>
                 </div>
                 <div class="col-6 col-lg-2 mb-3 text-light">
@@ -118,13 +227,11 @@
                 }
             </style>
             <p class="text-light text-center">
-                <a href="#" style="text-decoration: none; color: white; font-size: 14px;"><span>Russian</span></a>
+                <a href="{% url 'pl:main' %}" style="text-decoration: none; color: white; font-size: 14px;"><span>Polski</span></a>
                 <span class="tab"></span>
-                <a href="#" style="text-decoration: none; color: white; font-size: 14px;"><span>Polish</span></a>
+                <a href="{% url 'ru:main' %}" style="text-decoration: none; color: white; font-size: 14px;"><span>Український</span></a>
                 <span class="tab"></span>
-                <a href="#" style="text-decoration: none; color: white; font-size: 14px;"><span>English</span></a>
-                <span class="tab"></span>
-                <a href="#" style="text-decoration: none; color: white; font-size: 14px;"><span>Spanish</span></a>
+                <a href="{% url 'en:main' %}" style="text-decoration: none; color: white; font-size: 14px;"><span>English</span></a>
             </p>
         </footer>
     </body>

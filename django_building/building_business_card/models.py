@@ -43,7 +43,7 @@ class Project(models.Model):
 class OldProject(models.Model):
 
     title = models.CharField(max_length=100, verbose_name='Project')
-    about = models.TextField(max_length=255, verbose_name='Description')
+    # about = models.TextField(max_length=255, verbose_name='Description')
     place = models.CharField(max_length=100, verbose_name='Place')
     start = models.IntegerField(verbose_name='Year of start')
     end = models.IntegerField(verbose_name='Year of end', null=True)
@@ -71,12 +71,12 @@ class Vacancy(models.Model):
 
 class NewEmployee(models.Model):
 
-    position = models.ForeignKey(Vacancy, on_delete=models.DO_NOTHING, verbose_name='Доступные должности')
-    first_name = models.CharField(max_length=100, verbose_name='имя')
-    last_name = models.CharField(max_length=100, verbose_name='фамилия')
-    phone = models.BigIntegerField(verbose_name='телефон')
-    year = models.IntegerField(max_length=10, verbose_name='год рождения')
-    location = models.CharField(max_length=100, verbose_name='город, в котором сейчас находитесь')
+    position = models.ForeignKey(Vacancy, on_delete=models.DO_NOTHING, verbose_name='Dostępne stanowiska')
+    first_name = models.CharField(max_length=100, verbose_name='imię')
+    last_name = models.CharField(max_length=100, verbose_name='nazwisko')
+    phone = models.BigIntegerField(verbose_name='telefon')
+    year = models.IntegerField(max_length=10, verbose_name='rok urodzenia')
+    location = models.CharField(max_length=100, verbose_name='miasto, w którym teraz jesteś')
 
     def __str__(self):
         return f"{self.position} | {self.first_name} {self.last_name} {self.phone}"

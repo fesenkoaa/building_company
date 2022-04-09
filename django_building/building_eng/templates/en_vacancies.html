@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+    {{title}}
+{% endblock %}
+
+{% block content %}
+    <header class="bg-dark text-white">
+        <div class="container px-4 text-center">
+            <h2 class="fw-bolder"><strong><span style="color: red;">TT</span><span style="color: #ffcc00;">CONSULTING</span></strong> hires new employees!</h2>
+        </div>
+    </header>
+
+    <div class="text-center">
+        {% if messages %}
+        {% for message in messages %}
+        {% if message.tags == 'success' %}
+        <div class="alert alert-success" role="alert">
+            {{ message }}
+        </div>
+        {% else %}
+        <div class="alert alert-danger" role="alert">
+            {{ message }}
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+    </div>
+
+        <section id="about" style="background-image: url('{% static 'bg_vac1.jpeg' %}')">
+            <div class="container px-4" id="main-article1">
+                <style>
+                    #main-article1 {
+                        border-radius: 25px;
+                        background: rgba(0,0,0,0.75);
+                        padding: 8px;
+                        width: 80%;
+                        padding-left: auto;
+                        padding-right: auto;
+                    }
+                </style>
+                <br>
+                <div class="row gx-4 justify-content-center text-light">
+                    <div class="col-lg-8">
+                        <p class="lead"><strong>We offer:</strong></p>
+                        <ul>
+                            <br>
+                            <li><strong>ACCOMMODATION</strong> - We provide our employees with <strong> free housing</strong></li>
+                            <br>
+                            <li><strong>WORK SHIFT</strong> - Typical Work typical shift is <strong>10 hours</strong></li>
+                            <br>
+                            <li><strong>POSSIBILITIES</strong> - Availability of work during <strong>the whole year</strong> and the possibility of <strong>professional development</strong></li>
+                            <br>
+                            <li><strong>LEGALIZATION SUPPORT</strong> - We provide our employees with all unnecessary documents for work and life.</li>
+                        </ul>
+                        <br>
+                        <p class="lead"><strong>We are interested in you, if you are:</strong></p>
+                        <ul>
+                            <br>
+                            <li><strong>Responsible and reliable</strong></li>
+                            <br>
+                            <li><strong>Professional, or ready to study</strong></li>
+                            <br>
+                            <li><strong>Free from alcohol and drug addictions</strong></li>
+                        </ul>
+                        <br>
+                        <br>
+                        <p class="text-center"><a href="#vacancies" style="text-decoration: none; color: #bfbfbf;">SEND YOUR BID BELOW</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <section id="contact" style="background-image: url('{% static 'bg_vac3.jpeg' %}')">
+        <div class="container px-4" id="main-article3">
+            <br>
+            <style>
+                    #main-article3 {
+                        border-radius: 25px;
+                        background: rgba(0,0,0,0.75);
+                        padding: 8px;
+                        width: 80%;
+                        padding-left: auto;
+                        padding-right: auto;
+                    }
+                </style>
+            <div class="row gx-4 justify-content-center text-light">
+                <div class="col-lg-8">
+                    <h4>Fill out the form by choosing one of the available vacancies:</h4>
+                    <br>
+                    <form action="{% url 'pl:vacancies-form' %}" method="post" style="width: 85%;">
+                        {% csrf_token %}
+                        {{ form }}
+                        <br>
+                        <button class="btn btn-danger mt-2 px-4" type="submit">send</button>
+                        <br><br>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+        <script rel="text/javascript" src="{% static 'script.js' %}"></script>
+{% endblock %}

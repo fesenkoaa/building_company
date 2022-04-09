@@ -9,7 +9,7 @@
 {% block content %}
     <header class="bg-dark text-white">
         <div class="container px-4 text-center">
-            <h2 class="fw-bolder"><strong><span style="color: red;">TT</span><span style="color: #ffcc00;">CONSULTING</span></strong> набирает новых сотрудников!</h2>
+            <h2 class="fw-bolder"><strong><span style="color: red;">TT</span><span style="color: #ffcc00;">CONSULTING</span></strong> rekrutuje nowych pracowników!</h2>
         </div>
     </header>
 
@@ -44,65 +44,34 @@
                 <br>
                 <div class="row gx-4 justify-content-center text-light">
                     <div class="col-lg-8">
-                        <p class="lead"><strong>Мы предлагаем:</strong></p>
+                        <p class="lead"><strong>Oferujemy:</strong></p>
                         <ul>
                             <br>
-                            <li><strong>РАЗМЕЩЕНИЕ</strong> - Мы обеспечиваем наших сотрудников <strong>жильем</strong> или оказываем <strong>материальную поддержку</strong>, если арендуете сами!</li>
+                            <li><strong>MIESZKANIE</strong> - zapewniamy naszym pracownikom <strong>bezpłatne mieszkanie</strong></li>
                             <br>
-                            <li><strong>РАБОЧАЯ СМЕНА</strong> - Обычная смена это <strong>10 рабочих часов</strong>.</li>
+                            <li><strong>GODZINY PRACY</strong> - Zwykła zmiana to <strong>10 godzin pracy</strong></li>
                             <br>
-                            <li><strong>ОПЛАТА ТРУДА</strong> - Каждый наш сотрудник получает не менее <strong>250 PLN за рабочую смену.</strong></li>
+                            <li><strong>HORYZONT</strong> - Dostępność pracy przez cały rok, a także możliwość <strong>rozwoju zawodowego</strong></li>
                             <br>
-                            <li><strong>ЮРИДИЧЕСКАЯ ПОДДЕРЖКА</strong> - Мы обеспечиваем наших сотрудников полным пакетом необходимых для работы и жизни до</li>
+                            <li><strong>WSPARCIE PRAWNE</strong> - Pełna obsługa dokumentacji Twojego legalnego pobytu i pracy</li>
                         </ul>
                         <br>
-                        <p class="lead"><strong>Вы подходите нам, если Вы:</strong></p>
+                        <p class="lead"><strong>Jesteś dla nas odpowiedni, jeśli:</strong></p>
                         <ul>
                             <br>
-                            <li><strong>Ответственный и надежный</strong></li>
+                            <li><strong>Odpowiedzialny i rzetelny</strong></li>
                             <br>
-                            <li><strong>Профессионал, или готов много учится</strong></li>
+                            <li><strong>Profesjonalny, gotowy dużo się nauczyć</strong></li>
                             <br>
-                            <li><strong>Без алкогольной и наркотической зависимостей</strong></li>
+                            <li><strong>Brak uzależnień od alkoholu i narkotyków</strong></li>
                         </ul>
                         <br>
                         <br>
-                        <p class="text-center"><a href="#vacancies" style="text-decoration: none; color: grey;">ОСТАВТЕ ЗАЯВКУ НИЖЕ</a></p>
+                        <p class="text-center"><a href="#vacancies" style="text-decoration: none; color: #bfbfbf;">ZOSTAW WNIOSEK PONIŻEJ</a></p>
                     </div>
                 </div>
             </div>
         </section>
-
-<!--    <section class="bg-light" style="background-image: url('{% static '#' %}')">-->
-<!--        <div class="container px-4 text-light" id="main-article2">-->
-<!--            <br>-->
-<!--            <style>-->
-<!--                    #main-article2 {-->
-<!--                        border-radius: 25px;-->
-<!--                        background: rgba(0,0,0,0.75);-->
-<!--                        padding: 8px;-->
-<!--                        width: 80%;-->
-<!--                        padding-left: auto;-->
-<!--                        padding-right: auto;-->
-<!--                    }-->
-<!--                </style>-->
-<!--            <h2 class="text-center">Доступные вакансии:</h2>-->
-<!--                <br>-->
-<!--                <br>-->
-<!--                <br>-->
-<!--            {% for vacancy in vacancies %}-->
-<!--            <div class="row gx-4 justify-content-center">-->
-<!--                <div class="col-lg-8">-->
-<!--                    <h6 class="lead text-center"><strong>{{ vacancy.position.upper }}</strong></h6>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <br>-->
-<!--            <br>-->
-<!--            <br>-->
-<!--            {% endfor %}-->
-<!--            <p class="text-center"><a href="#contact" style="text-decoration: none; color: grey;">ЗАПОЛНИТЕ ФОРМУ НИЖЕ, ЧТОБЫ ПОДАТЬ ЗАЯВКУ НА ВАКАНСИЮ</a></p>-->
-<!--        </div>-->
-<!--    </section>-->
 
     <section id="contact" style="background-image: url('{% static 'bg_vac3.jpeg' %}')">
         <div class="container px-4" id="main-article3">
@@ -119,13 +88,13 @@
                 </style>
             <div class="row gx-4 justify-content-center text-light">
                 <div class="col-lg-8">
-                    <h4>Заполните форму, выбрав одну из доступных вакансий:</h4>
+                    <h4>Wypełnij formularz, wybierając jedno z dostępnych wakatów:</h4>
                     <br>
-                    <form action="{% url 'vacancies-form' %}" method="post" style="width: 85%;">
+                    <form action="{% url 'pl:vacancies-form' %}" method="post" style="width: 85%;">
                         {% csrf_token %}
                         {{ form }}
                         <br>
-                        <button class="btn btn-danger mt-2 px-4" type="submit">подать заявку</button>
+                        <button class="btn btn-danger mt-2 px-4" type="submit">wysłać</button>
                         <br><br>
                     </form>
                 </div>
