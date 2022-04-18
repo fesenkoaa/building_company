@@ -97,10 +97,11 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # add 'whitenoise.middleware.WhiteNoiseMiddleware' to MIDDLEWARE and
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # python manage.py collectstatic
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

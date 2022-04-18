@@ -15,8 +15,9 @@ DATABASES = {
         'USER': 'fesenkoaa',
         'PASSWORD': '123456',
         'HOST': 'localhost',
-        'POST': ''
+        'POST': '5432'
     }
 }
 
+STATIC_DIR = os.path.join(BASE_DIR, 'static')
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
